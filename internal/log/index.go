@@ -78,7 +78,7 @@ func (i *index) Read(in int64) (out uint32, pos uint64, err error) {
 	return out, pos, nil
 }
 
-// write the rec offset and its position in the rec store
+// write the rec RELATIVE offset and its position in the rec store
 func (i *index) Write(off uint32, pos uint64) error {
 	if uint64(len(i.mmap)) < i.size + entWidth {
 		return io.EOF
